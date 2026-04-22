@@ -1,16 +1,38 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from "react";
+import { Navbar } from "@/components/site/Navbar";
+import { Hero } from "@/components/site/Hero";
+import { About } from "@/components/site/About";
+import { Properties } from "@/components/site/Properties";
+import { PaymentPlan } from "@/components/site/PaymentPlan";
+import { Gallery } from "@/components/site/Gallery";
+import { Contact } from "@/components/site/Contact";
+import { Footer } from "@/components/site/Footer";
+import { WhatsAppButton } from "@/components/site/WhatsAppButton";
+import { Chatbot } from "@/components/site/Chatbot";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  useEffect(() => {
+    document.title = "MASHA ALLAH HEIGHT'S — Luxury Real Estate in Islamabad";
+    const meta = document.querySelector('meta[name="description"]') || (() => {
+      const m = document.createElement("meta"); m.setAttribute("name", "description"); document.head.appendChild(m); return m;
+    })();
+    meta.setAttribute("content", "Premium shops, offices, apartments & penthouses in Islamabad. 2.5 year easy installment plan with 30% down payment. Book Now.");
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <main className="bg-background text-foreground">
+      <Navbar />
+      <Hero />
+      <About />
+      <Properties />
+      <PaymentPlan />
+      <Gallery />
+      <Contact />
+      <Footer />
+      <WhatsAppButton />
+      <Chatbot />
+    </main>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
